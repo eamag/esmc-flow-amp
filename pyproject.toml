@@ -1,0 +1,49 @@
+[project]
+name = "esmc-flow-amp"
+version = "1.0.0"
+description = "AMP Challenge 2027 submission: charge-steered ESM-C masked flow with held-out library selection"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "levenshtein>=0.27.3",
+]
+
+[project.scripts]
+generate = "esmc_flow_amp.generate:main"
+
+[project.optional-dependencies]
+pipeline = [
+    "biopython>=1.83",
+    "esm==3.2.1.post1",
+    "httpx>=0.27",
+    "lightning>=2.2.0",
+    "matplotlib>=3.8.0",
+    "numpy>=2.0.0",
+    "pandas>=2.2.0",
+    "peptides>=0.5.0",
+    "pyarrow>=15.0.0",
+    "python-dotenv>=1.0.0",
+    "rapidfuzz>=3.0.0",
+    "scikit-learn>=1.4.0",
+    "scipy>=1.12.0",
+    "seqme[aa_descriptors]>=0.5.1",
+    "tabpfn>=2.0",
+    "torch>=2.2.0",
+    "transformers>=4.48.0,<5.0.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "esmc_flow_amp"
+module-root = "src"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ty.rules]
+unresolved-import = "ignore"

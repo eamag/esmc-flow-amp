@@ -1,0 +1,23 @@
+[project]
+name = "ampredictor"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "bio==1.8.1",
+    "biopython==1.86",
+    "fair-esm==2.0.0",
+    "numpy==2.4.2",
+    "pandas==3.0.1",
+    "rdkit==2025.9.5",
+    "torch==2.10.0",
+    "torch-geometric==2.7.0",
+]
+
+[project.scripts]
+ampredictor = "ampredictor:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
